@@ -1,0 +1,11 @@
+- direction: 'vertical'
+- name: 'drive'
+  service: 'drive'
+  image: "package://drc_task_common/icons/vehicle-icon.png"
+  image_size: [80, 80]
+  column: 0
+- name: 'door'
+  service: 'door'
+  image: "package://drc_task_common/icons/door-icon.png"
+  image_size: [80, 80]
+  column: 0

@@ -1,0 +1,10 @@
+<launch> 
+  <node pkg="rqt_gui" type="rqt_gui" name="rqt_image_view_button"
+        args="--perspective-file $(find hsr_task_common)/config/rqt_ui.perspective"
+        >
+    <rosparam>
+      service_button_stair_layout_file: "package://hsr_task_common/config/ocs_ui_button_layout.yaml"
+    </rosparam>
+  </node>
+  <node pkg="uvc_camera" type="uvc_camera_node" name="camera" />
+</launch>

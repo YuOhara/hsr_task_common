@@ -7,7 +7,7 @@ generate_dynamic_reconfigure_options(cfg/AdditionalRqt.cfg)
 include_directories(${dynamic_reconfigure_PACKAGE_PATH}/cmake/cfgbuild.cmake) 
 
 add_message_files(FILES
-  UiOut.msg)
+  UiOut.msg TimeSim.msg)
 generate_messages(DEPENDENCIES sensor_msgs)
 catkin_package(
 )

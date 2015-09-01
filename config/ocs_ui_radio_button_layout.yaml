@@ -1,0 +1,22 @@
+- direction: 'verticle'
+- name: 'message'
+  service: '/message'
+  image: "package://hsr_task_common/icons/exec.png"
+  image_size: [80, 80]
+  column: 0
+- name: 'eat'
+  service: '/eat'
+  image: "package://hsr_task_common/icons/exec.png"
+  image_size: [80, 80]
+  column: 0
+- name: 'study'
+  service: '/study'
+  image: "package://hsr_task_common/icons/exec.png"
+  image_size: [80, 80]
+  column: 0
+  default_value: True
+- name: 'sleep'
+  service: '/sleep'
+  image: "package://hsr_task_common/icons/exec.png"
+  image_size: [80, 80]
+  column: 0

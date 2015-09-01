@@ -1,11 +1,11 @@
 - direction: 'vertical'
-- name: 'drive'
-  service: 'drive'
+- name: 'send'
+  service: '/send'
   image: "package://hsr_task_common/icons/exec.png"
   image_size: [80, 80]
   column: 0
-- name: 'door'
-  service: 'door'
+- name: 'save'
+  service: '/save'
   image: "package://hsr_task_common/icons/exec.png"
   image_size: [80, 80]
-  column: 0
+  column: 1

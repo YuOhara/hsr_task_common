@@ -5,7 +5,7 @@
       "keys": {
         "running-plugins": {
           "type": "repr", 
-          "repr": "{u'jsk_rqt_plugins/StringLabel': [1], u'__DockWidgetContainer': [1], u'rqt_reconfigure/Param': [1], u'rqt_image_view/ImageView': [1], u'jsk_rqt_plugins/ServiceButtons': [1]}"
+          "repr": "{u'rqt_reconfigure/Param': [1], u'rqt_image_view/ImageView': [1], u'jsk_rqt_plugins/ServiceRadioButtons': [1], u'jsk_rqt_plugins/ServiceButtons': [1]}"
         }
       }, 
       "groups": {
@@ -16,7 +16,7 @@
               "keys": {
                 "dockable": {
                   "type": "repr", 
-                  "repr": "False"
+                  "repr": "u'false'"
                 }, 
                 "parent": {
                   "type": "repr", 
@@ -70,10 +70,10 @@
             }
           }
         }, 
-        "plugin__rqt_reconfigure__Param__1": {
+        "plugin__jsk_rqt_plugins__ServiceRadioButtons__1": {
           "keys": {}, 
           "groups": {
-            "dock_widget___plugincontainer_top_widget": {
+            "dock_widget__": {
               "keys": {
                 "dockable": {
                   "type": "repr", 
@@ -88,15 +88,9 @@
             }, 
             "plugin": {
               "keys": {
-                "splitter": {
-                  "type": "repr(QByteArray.hex)", 
-                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000000000020000000000000af901000000060100000001')", 
-                  "pretty-print": "               "
-                }, 
-                "_splitter": {
-                  "type": "repr(QByteArray.hex)", 
-                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000000000020000012c0000000001000000090100000002')", 
-                  "pretty-print": "       ,       "
+                "layout_param": {
+                  "type": "repr", 
+                  "repr": "u'/rqt_image_view_button/service_button_radio_layout_file'"
                 }
               }, 
               "groups": {}
@@ -149,7 +143,7 @@
               "keys": {
                 "dockable": {
                   "type": "repr", 
-                  "repr": "True"
+                  "repr": "u'true'"
                 }, 
                 "parent": {
                   "type": "repr", 
@@ -252,6 +246,39 @@
               }
             }
           }
+        }, 
+        "plugin__rqt_reconfigure__Param__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget___plugincontainer_top_widget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff0000000000000002000000ae0000026e01000000060100000001')", 
+                  "pretty-print": "         n     "
+                }, 
+                "_splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000000000020000012c0000000001000000090100000002')", 
+                  "pretty-print": "       ,       "
+                }
+              }, 
+              "groups": {}
+            }
+          }
         }
       }
     }, 
@@ -259,13 +286,13 @@
       "keys": {
         "geometry": {
           "type": "repr(QByteArray.hex)", 
-          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb00010000000000410000001800000b3f00000653000000410000001800000b3f00000653000000000000')", 
-          "pretty-print": "     A   ? S A   ? S   "
+          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb00010000000000410000001800000555000002ff000000410000001800000555000002ff000000000000')", 
+          "pretty-print": "     A   U   A   U     "
         }, 
         "state": {
           "type": "repr(QByteArray.hex)", 
-          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd000000020000000200000aff0000048ffc0100000001fc0000000000000aff0000019a00fffffffc0200000002fc00000028000004650000015800fffffffc0100000004fb0000004c006a0073006b005f007200710074005f0070006c007500670069006e0073005f005f0049006d006100670065005600690065007700320050006c007500670069006e005f005f0031005f005f0100000000000000880000000000000000fb0000004c007200710074005f0063006f006e0073006f006c0065005f005f0043006f006e0073006f006c0065005f005f0031005f005f0043006f006e0073006f006c00650057006900640067006500740100000000000002790000000000000000fb0000005a007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f0031005f005f0049006d00610067006500560069006500770057006900640067006500740100000000000004c10000010c00fffffffb00000048006a0073006b005f007200710074005f0070006c007500670069006e0073005f005f00530065007200760069006300650042007500740074006f006e0073005f005f0031005f005f01000004c7000006380000008800fffffffb00000030005f005f0044006f0063006b0057006900640067006500740043006f006e007400610069006e00650072005f005f00310100000493000000240000002400ffffff0000000300000aff0000015afc0100000002fb0000006c007200710074005f007200650063006f006e006600690067007500720065005f005f0050006100720061006d005f005f0031005f005f005f0070006c007500670069006e0063006f006e007400610069006e00650072005f0074006f0070005f007700690064006700650074010000000000000a5c0000018500fffffffb00000042006a0073006b005f007200710074005f0070006c007500670069006e0073005f005f0053007400720069006e0067004c006100620065006c005f005f0031005f005f0100000a620000009d0000008800ffffff00000aff0000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')", 
-          "pretty-print": "                                        Ljsk_rqt_plugins__ImageView2Plugin__1__          Lrqt_console__Console__1__ConsoleWidget          Zrqt_image_view__ImageView__1__ImageViewWidget          Hjsk_rqt_plugins__ServiceButtons__1__          0__DockWidgetContainer__1                   lrqt_reconfigure__Param__1___plugincontainer_top_widget          Bjsk_rqt_plugins__StringLabel__1__                            6MinimizedDockWidgetsToolbar        "
+          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd000000020000000200000515000000f5fc0100000001fc00000000000005150000000000fffffffc0200000002fc00000019000000f50000000000fffffffc0100000002fb0000004c006a0073006b005f007200710074005f0070006c007500670069006e0073005f005f0049006d006100670065005600690065007700320050006c007500670069006e005f005f0031005f005f0100000000000000880000000000000000fb0000004c007200710074005f0063006f006e0073006f006c0065005f005f0043006f006e0073006f006c0065005f005f0031005f005f0043006f006e0073006f006c00650057006900640067006500740100000000000002790000000000000000fb00000030005f005f0044006f0063006b0057006900640067006500740043006f006e007400610069006e00650072005f005f0031030000004c0000014f000005150000001d0000000300000515000002b9fc0100000003fc000000000000039d0000010700fffffffc0200000002fb0000005a007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f0031005f005f0049006d00610067006500560069006500770057006900640067006500740100000019000001960000005100fffffffb0000006c007200710074005f007200650063006f006e006600690067007500720065005f005f0050006100720061006d005f005f0031005f005f005f0070006c007500670069006e0063006f006e007400610069006e00650072005f0074006f0070005f00770069006400670065007401000001b50000011d0000010f00fffffffc000003a300000172000000f800fffffffc0200000002fb00000052006a0073006b005f007200710074005f0070006c007500670069006e0073005f005f00530065007200760069006300650052006100640069006f0042007500740074006f006e0073005f005f0031005f005f0100000019000001f0000001b100fffffffb00000048006a0073006b005f007200710074005f0070006c007500670069006e0073005f005f00530065007200760069006300650042007500740074006f006e0073005f005f0031005f005f010000020f000000c3000000b800fffffffb00000042006a0073006b005f007200710074005f0070006c007500670069006e0073005f005f0053007400720069006e0067004c006100620065006c005f005f0031005f005f01000003ff000000880000000000000000000005150000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')", 
+          "pretty-print": "                                        Ljsk_rqt_plugins__ImageView2Plugin__1__          Lrqt_console__Console__1__ConsoleWidget          0__DockWidgetContainer__1                                                                                  Q                                                                                Rjsk_rqt_plugins__ServiceRadioButtons__1__          Hjsk_rqt_plugins__ServiceButtons__1__          Bjsk_rqt_plugins__StringLabel__1__                            6MinimizedDockWidgetsToolbar        "
         }
       }, 
       "groups": {

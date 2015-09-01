@@ -1,0 +1,8 @@
+<launch>
+  <include file="$(find hsr_task_common)/launch/ui.launch"/>
+  <node pkg="hsr_task_common" type="hsr_task_main.py" name="hsr_task_main" output="screen"/>
+  <!-- <node pkg="hsr_task_common" type="hsr_kitaku.py" name="hsr_kitaku" /> -->
+  <!-- <node pkg="hsr_task_common" type="hsr_syukudai.py" name="hsr_syukudai" /> -->
+  <node pkg="hsr_task_common" type="hsr_yuusyoku.py" name="hsr_yuusyoku" output="screen"/>
+  <!-- <node pkg="hsr_task_common" type="hsr_syuusin.py" name="hsr_syuusin" /> -->
+</launch>

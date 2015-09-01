@@ -5,6 +5,8 @@
   <!-- <node pkg="hsr_task_common" type="hsr_syukudai.py" name="hsr_syukudai" /> -->
   <node pkg="hsr_task_common" type="hsr_yuusyoku.py" name="hsr_yuusyoku" output="screen"/>
   <node pkg="hsr_task_common" type="script_interface.py" name="script_interface"/>
-  <node pkg="jsk_topic_tools" type="snapshot" name="snapshot" />
+  <node pkg="jsk_topic_tools" type="snapshot" name="snapshot" >
+    <remap from="~input" to="/hsrb/head_rgbd_sensor/rgb/image_color" />
+  </node>
   <!-- <node pkg="hsr_task_common" type="hsr_syuusin.py" name="hsr_syuusin" /> -->
 </launch>

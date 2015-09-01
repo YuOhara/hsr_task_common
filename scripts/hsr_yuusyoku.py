@@ -19,21 +19,25 @@ def yuusyoku_demo(data):
     #if data.obj_id != this_obj_id:
     # return
     # MANUPUlATION_YUUSYOKU
-    manip(data.obj)
+    manip(data.obj_id)
     tts = robot.get('default', robot.Items.TEXT_TO_SPEECH)
     face_flag = False
-    while not face_flag:
+    while (not face_flag):
         tts.say(data.call_msg)
-        rospy.sleep(5)
+        rospy.sleep(10)
         # calc face pos
         if (True):
             face_flag = True
     # face
-    pub_parent_face.publush(data.face)
+    pub_parent_face.publish(data.face)
     tts.say(data.message)
+    rospy.sleep(10)
     pub_sound_save.publish(Empty_msg()) ## save sound
-    tts.say("写真をとるよ")
+    tts.say("写真をとるよー")
+    rospy.sleep(5)
     tts.say("はいチーズ")
+    rospy.sleep(4)
+    tts.say("かしゃしゃっ！")
     # rospy.Subscriber("/") KAO_NINSHIKI
     req_send_face_srv()
     

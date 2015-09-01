@@ -1,7 +1,7 @@
 - direction: 'vertical'
 - name: 'play_sound'
   service: '/play_sound'
-  image: "package://hsr_task_common/icons/exec.png"
+  image: "package://hsr_task_common/icons/sound.png"
   image_size: [80, 80]
   column: 0
 - name: 'send'

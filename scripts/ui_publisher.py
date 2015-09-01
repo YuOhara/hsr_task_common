@@ -2,7 +2,7 @@
 import rospy
 
 from sensor_msgs.msg import Image
-from hsr_task_common.msg import UiOut
+from hsr_task_common.msg import UiOut, SimpleTime
 from dynamic_reconfigure.server import Server
 from hsr_task_common.cfg import AdditionalRqtConfig
 from std_srvs.srv import *
@@ -36,7 +36,10 @@ class UiOutPublisher():
     def image_cb(self, msg):
         self.photo_msg = msg
     def send_cb(self, req):
-        self.ui_out_pub.publish(UiOut(face=self.photo_msg, call_msg=self.call_msg, message=self.message, obj_id=self.task, hours=self.hours, minutes=self.minutes))
+        st = SimpleTime()
+        st.hours = self.hours
+        st.minutes = self.minutes
+        self.ui_out_pub.publish(UiOut(face=self.photo_msg, call_msg=self.call_msg, message=self.message, obj_id=self.task, time=st))
         return EmptyResponse()
     def message_cb(self, req):
         self.task = 0

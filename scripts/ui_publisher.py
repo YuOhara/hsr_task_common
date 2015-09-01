@@ -1,7 +1,9 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import rospy
 
 from sensor_msgs.msg import Image
+from std_msgs.msg import String
 from hsr_task_common.msg import UiOut, SimpleTime
 from dynamic_reconfigure.server import Server
 from hsr_task_common.cfg import AdditionalRqtConfig
@@ -17,11 +19,13 @@ class UiOutPublisher():
         self.task = 0
         self.hours = 0
         self.minutes = 0
-        self.call_msg = ""
-        self.message = ""
+        self.call_msg = "ごはんですよ、たろうくん"
+        self.message = "今日のご飯は、おいしかった？"
         self.photo_msg = None
         rospy.Service('/send', Empty, self.send_cb)
         rospy.Subscriber('/image_raw', Image, self.image_cb)
+        rospy.Subscriber("string_call", String, self.call_cb)
+        rospy.Subscriber("string_message", String, self.message_cb)
         rospy.Service('/message', Empty, self.send_cb)
         rospy.Service('/eat', Empty, self.eat_cb)
         rospy.Service('/study', Empty, self.study_cb)
@@ -33,6 +37,12 @@ class UiOutPublisher():
         self.minutes = config.minutes
         rospy.loginfo(self.call_msg)
         return config
+    def call_cb(self, msg):
+        rospy.loginfo("get call msg")
+        self.call_msg = msg.data
+    def message_cb(self, msg):
+        rospy.loginfo("get message")
+        self.message = msg.data
     def image_cb(self, msg):
         self.photo_msg = msg
     def send_cb(self, req):

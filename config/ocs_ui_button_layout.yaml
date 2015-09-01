@@ -1,11 +1,11 @@
 - direction: 'vertical'
-- name: 'send'
-  service: '/send'
+- name: 'play_sound'
+  service: '/play_sound'
   image: "package://hsr_task_common/icons/exec.png"
   image_size: [80, 80]
   column: 0
-- name: 'save'
-  service: '/save'
+- name: 'send'
+  service: '/send'
   image: "package://hsr_task_common/icons/exec.png"
   image_size: [80, 80]
   column: 1

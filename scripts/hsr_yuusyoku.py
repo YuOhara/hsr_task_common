@@ -4,7 +4,7 @@
 import hsrb_interface
 import rospy
 import math
-from hsrb_interface from geometry
+from hsrb_interface import geometry
 from hsr_task_common.msg import UiOut
 from sensor_msgs.msg import Image
 from std_srvs.srv import *
@@ -71,7 +71,7 @@ def manip(obj):
     whole_body.move_end_effector_pose(geometry.pose(z=0.090), 'hand_palm_link')
     gripper.command(1.25)
     whole_body.move_end_effector_pose(geometry.pose(z=-0.20), 'hand_palm_link') # move arm far from table
-    whole_bode.move_to_go()
+    whole_body.move_to_go()
     # pass
 
 def execute_task_sub():

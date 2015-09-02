@@ -55,7 +55,7 @@ def yuusyoku_demo(data):
 def manip(obj):
     # go to kitchen
     whole_body.move_to_go()
-    omni_base.go(5.90, 0.0, -1.57, 60, relative=False)
+    omni_base.go(5.90, 0.0, -1.57, 120, relative=False)
 
     # IK and grasp
     whole_body.move_end_effector_pose(geometry.pose(ei=-1.10, y=-0.10, z=-0.05), 'recognized_object/4')
@@ -64,8 +64,8 @@ def manip(obj):
 
     # go to table
     whole_body.move_end_effector_pose(geometry.pose(z=-0.1), 'hand_palm_link')
-    omni_base.go(5.90, 4.4, -3.14, 60, relative=False)
-    omni_base.go(5.25, 4.4, -3.14, 60, relative=False) # approach to table
+    omni_base.go(5.90, 4.4, -3.14, 120, relative=False)
+    omni_base.go(5.25, 4.4, -3.14, 120, relative=False) # approach to table
 
     # IK and release
     whole_body.move_end_effector_pose(geometry.pose(z=0.090), 'hand_palm_link')

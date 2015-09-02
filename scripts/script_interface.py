@@ -9,7 +9,7 @@ class ScriptInterface():
         rate = rospy.get_param('~rate', 10)
         r = rospy.Rate(rate)
         rospy.Subscriber('/command1', Empty_msg, self.command1_cb)
-        rospy.Service('/play', Empty, self.play_cb)
+        rospy.Service('/play_sound', Empty, self.play_cb)
     def command1_cb(self, msg):
         check = commands.getoutput("rosrun hsr_task_common get_sound.sh")
         print check

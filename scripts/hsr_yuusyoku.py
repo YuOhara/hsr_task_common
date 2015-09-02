@@ -3,15 +3,23 @@
 
 import hsrb_interface
 import rospy
+import math
+from hsrb_interface from geometry
 from hsr_task_common.msg import UiOut
 from sensor_msgs.msg import Image
 from std_srvs.srv import *
 from std_msgs.msg import Empty as Empty_msg
+
 this_obj_id=2
 robot = hsrb_interface.Robot()
 pub_parent_face = rospy.Publisher("/parent_face", Image)
 req_send_face_srv = rospy.ServiceProxy("/snapshot/request", Empty)
 pub_sound_save = rospy.Publisher("/command1", Empty_msg)
+
+robot = hsrb_interface.Robot()
+omni_base = robot.get('omni_base')
+whole_body = robot.get('whole_body')
+gripper = robot.get('gripper')
 
 def yuusyoku_demo(data):
     print "start yuusyokudemo"
@@ -40,16 +48,32 @@ def yuusyoku_demo(data):
     tts.say("かしゃしゃっ！")
     # rospy.Subscriber("/") KAO_NINSHIKI
     req_send_face_srv()
-    
 
 def manip(obj):
-    pass
-    
+    # go to kitchen
+    wholebody.move_to_go()
+    omni_base.go(5.90, 0.0, -1.57, 60, relative=False)
+
+    # IK and grasp
+    whole_body.move_end_effector_pose(geometry.pose(ei=-1.10, y=-0.10, z=-0.05), 'recognized_object/4')
+    whole_body.move_end_effector_pose(geometry.pose(z=0.05), 'hand_palm_link')
+    gripper.grasp(-0.10) # -0.01 is too weak
+
+    # go to table
+    whole_body.move_end_effector_pose(geometry.pose(z=-0.1), 'hand_palm_link')
+    omni_base.go(5.90, 4.4, -3.14, 60, relative=False)
+    omni_base.go(5.25, 4.4, -3.14, 60, relative=False) # approach to table
+
+    # IK and release
+    whole_body.move_end_effector_pose(geometry.pose(z=0.090), 'hand_palm_link')
+    gripper.command(1.25)
+    whole_body.move_end_effector_pose(geometry.pose(z=-0.20), 'hand_palm_link') # move arm far from table
+    whole_bode.move_to_go()
+    # pass
 
 def execute_task_sub():
     rospy.Subscriber("/execute_task", UiOut, yuusyoku_demo)
     rospy.spin()
 
-    
 if __name__ == "__main__":
     execute_task_sub()

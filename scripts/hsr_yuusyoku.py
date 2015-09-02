@@ -54,7 +54,7 @@ def yuusyoku_demo(data):
 
 def manip(obj):
     # go to kitchen
-    wholebody.move_to_go()
+    whole_body.move_to_go()
     omni_base.go(5.90, 0.0, -1.57, 60, relative=False)
 
     # IK and grasp

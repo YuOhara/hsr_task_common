@@ -15,8 +15,3 @@
   image_size: [80, 80]
   column: 0
   default_value: True
-- name: 'sleep'
-  service: '/sleep'
-  image: "package://hsr_task_common/icons/bed.png"
-  image_size: [80, 80]
-  column: 0

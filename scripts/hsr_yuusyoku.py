@@ -67,21 +67,45 @@ def photo():
     rospy.sleep(4)
     tts.say("かしゃしゃっ！")
 
+def manip_e(obj):
+    for i in [1, 2, 3]:
+        try:
+            whole_body.move_end_effector_pose(geometry.pose(ei=-1.10, y=-0.10, z=-0.05), 'recognized_object/4')
+            break
+        except:
+            rospy.sleep(5)
+            tts.say("うんち")
+            rospy.loginfo("manip mistate no tf")
+            rospy.sleep(5)
+            omni_base.go(0.10, 0, 0, 10, relative=True)
 
 def manip(obj):
     # go to kitchen
     whole_body.move_to_go()
     omni_base.go(5.90, 2.0, -3.14, 120, relative=False)
+    rospy.sleep(5)
 
-    # IK and grasp
+    # for i in [1, 2, 3]:
+    #     try:
+    #         whole_body.move_end_effector_pose(geometry.pose(ei=-1.10, y=-0.10, z=-0.05), 'recognized_object/4')
+    #         break
+    #     except:
+    #         rospy.sleep(3)
+    #         tts.say("うんち")
+    #         rospy.loginfo("manip mistate no tf")
+    #         rospy.sleep(3)
+    #         omni_base.go(0.10, 0, 0, 10, relative=True)
+
     whole_body.move_end_effector_pose(geometry.pose(ei=-1.10, y=-0.10, z=-0.05), 'recognized_object/4')
     whole_body.move_end_effector_pose(geometry.pose(z=0.05), 'hand_palm_link')
     gripper.grasp(-0.10) # -0.01 is too weak
 
     # go to table
     whole_body.move_end_effector_pose(geometry.pose(z=-0.1), 'hand_palm_link')
-    omni_base.go(5.90, 4.4, -3.14, 120, relative=False)
-    omni_base.go(5.25, 4.4, -3.14, 120, relative=False) # approach to table
+    omni_base.go(5.90, 4.25, -3.14, 120, relative=False)
+    omni_base.go(5.25, 4.25, -3.14, 120, relative=False) # approach to table
+    # omni_base.go(5.90, 4.4, -3.14, 120, relative=False)
+    # omni_base.go(5.25, 4.4, -3.14, 120, relative=False) # approach to table
 
     # IK and release
     whole_body.move_end_effector_pose(geometry.pose(z=0.090), 'hand_palm_link')
